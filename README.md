@@ -1,19 +1,20 @@
+# 🤖 Python Projekt: Lokaler Dokumenten-ChatBot
 
-# 🧠 Python Projekt: Lokaler Dokumenten-ChatBot
-
-Ein vollständig offline-fähiger KI-ChatBot mit grafischer Oberfläche (PyQt6), der eigene Dokumente (.txt, .pdf, .docx) importieren, analysieren und dauerhaft in einer Wissensbasis speichern kann. Fragen an diese Dokumente werden mithilfe eines lokalen GPT4All-Modells (Mistral) beantwortet – ganz ohne Internetverbindung.
+Ein vollständig **offline-fähiger KI-ChatBot mit grafischer Oberfläche (PyQt6)**, der eigene Dokumente (`.txt`, `.pdf`, `.docx`) importieren, analysieren und dauerhaft in einer **thematisch geordneten Wissensbasis** speichert.  
+Fragen an diese Dokumente werden mithilfe eines lokal laufenden **llama-cpp-python**-Modells (z. B. `em_german_mistral_v01.Q4_0.gguf`) beantwortet – ganz ohne Internetverbindung.
 
 ---
 
 ## 🚀 Features
 
-- Lokale GUI mit PyQt6
-- Offline-KI über [GPT4All](https://gpt4all.io) mit Mistral-Modell
-- Dokumentenimport aus `.txt`, `.pdf` und `.docx`
-- Themenbasierte Wissensablage (`wissen/<thema>/`)
-- Semantische Suche mit FAISS und SentenceTransformers
-- Ladeanimation mit GIF
-- Speichereingabe (Gedächtnisfunktion)
+- Lokale GUI mit **PyQt6**
+- Offline-KI via **llama-cpp-python**
+- Unterstützung für `.txt`, `.pdf`, `.docx`
+- **Thematisch strukturierte Wissensablage** (`wissen/<thema>/`)
+- **Semantische Vektorsuche** mit FAISS & SentenceTransformers
+- Fortschrittsanzeige & Ladeanimation (GIF)
+- Antwortfenster mit Chatverlauf
+- Optionale Gedächtnisfunktion (Dateispeicherung)
 
 ---
 
@@ -43,27 +44,35 @@ pip install -r requirements.txt
 
 ---
 
-## 💡 Nutzung
+## 🧠 Nutzung
 
 ```bash
 python ChatBotNeu.py
 ```
 
-1. Dokument importieren (Button klicken)
-2. Thema benennen (z. B. "Gesundheit")
-3. Fragen zu deinem Thema stellen
-4. Chatverlauf und Antworten erscheinen direkt im Fenster
+1. Dokument über die GUI importieren
+2. Thema benennen (z. B. "Sozialrecht", "Medizin")
+3. Fragen stellen – Antworten kommen direkt im Chatfenster
+4. Wissen wird thematisch im `wissen/`-Verzeichnis gespeichert
 
 ---
 
 ## ⚙️ Voraussetzungen
 
-- Python 3.10–3.12 empfohlen
-- Lokale GGUF-Modell-Datei (z. B. `em_german_mistral_v01.Q4_K_M.gguf`) im Pfad:
+- Python **3.10 – 3.12** empfohlen
+- Eine GGUF-Modell-Datei wie:
 
 ```plaintext
-C:\Users\bensc\Desktop\IT\KI_models
+em_german_mistral_v01.Q4_0.gguf
 ```
+
+- Modell liegt im Pfad:
+
+```plaintext
+C:\Users\bensc\Desktop\IT\KI_models\
+```
+
+⚠️ **Hinweis:** Achte auf ausreichend Arbeitsspeicher (ggf. RAM-optimiertes Modell verwenden)
 
 ---
 
@@ -72,27 +81,28 @@ C:\Users\bensc\Desktop\IT\KI_models
 ```plaintext
 python-project-chatbot/
 │
-├── ChatBotNeu.py           # Hauptdatei mit PyQt-GUI
-├── requirements.txt        # Benötigte Python-Pakete
-├── .gitignore              # Ausschlüsse für Git
-├── icon.ico                # Fenster-Icon
-├── sanduhr.gif             # Ladeanimation
-└── wissen/                 # Thematisch gespeicherte Dokumente
+├── ChatBotNeu.py            # Haupt-GUI mit KI-Anbindung
+├── requirements.txt         # Abhängigkeiten
+├── .gitignore               # Git-Ausnahmen
+├── icon.ico                 # Fenster-Icon
+├── sanduhr.gif              # Ladeanimation
+└── wissen/                  # Themenbasierte Dokumentenspeicherung
 ```
 
 ---
 
-## 🧠 Beispiel
+## 🧪 Beispiel
 
-> Thema: **"Gesundheit"**  
-> Frage: _„Was ist der Unterschied zwischen Grippe und Erkältung?“_  
-> → Der Bot liefert passende Informationen aus dem importierten Text.
+> Thema: **"Pflegegrad 3"**  
+> Frage: _„Welche Voraussetzungen gelten für den Pflegegrad 3 bei Kindern mit Downsyndrom?“_  
+> → Der ChatBot durchsucht die entsprechenden Dokumente im Hintergrund und liefert relevante Informationen.
 
 ---
 
-## 🛡 Hinweis zur Privatsphäre
+## 🔐 Privatsphäre
 
-Alle Datenverarbeitung findet **lokal** auf deinem Gerät statt. Es werden **keine Informationen an externe Server gesendet**.
+Alle Datenverarbeitung findet **lokal** auf deinem Gerät statt.  
+Es werden **keine Daten an externe Server gesendet oder gespeichert**.
 
 ---
 
