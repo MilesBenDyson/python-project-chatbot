@@ -1,0 +1,7 @@
+PyQt6
+faiss-cpu
+sentence-transformers
+gpt4all
+numpy
+PyMuPDF
+python-docx

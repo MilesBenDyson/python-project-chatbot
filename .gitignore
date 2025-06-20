@@ -1,0 +1,14 @@
+# Virtuelle Umgebung
+.venv/
+# Cache-Dateien
+__pycache__/
+*.pyc
+# FAISS & Embedding-Dateien
+*.faiss
+*.npy
+*.pkl
+# Sonstige temporäre oder lokale Dateien
+*.log
+.DS_Store
+.idea/
+.vscode/
